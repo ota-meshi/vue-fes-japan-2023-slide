@@ -46,7 +46,7 @@ export default defineComponent({
           const nest = i.children.some(isUlOrOl);
           if (i.children.some(isUlOrOl)) {
             const children = i.children.map((c) =>
-              isUlOrOl(c) ? applyChildren(c, level + 1) : c
+              isUlOrOl(c) ? applyChildren(c, level + 1) : c,
             );
             newNode.children = children;
           }

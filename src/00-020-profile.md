@@ -13,10 +13,14 @@ hideInToc: true
   <div class="org-avatars">
     <a href="https://github.com/future-architect" target="_brank"><img src="https://github.com/future-architect.png" alt="Future Corp"></a>
     <a href="https://github.com/vuejs" target="_brank"><img src="https://github.com/vuejs.png" alt="Vue.js"></a>
+    <a href="https://github.com/sveltejs" target="_brank"><img src="https://github.com/sveltejs.png" alt="Svelte"></a>
+    <a href="https://github.com/eslint" target="_brank"><img src="https://github.com/eslint.png" alt="ESLint"></a>
+    <a href="https://github.com/eslint-community" target="_brank"><img src="https://github.com/eslint-community.png" alt="ESLint Community"></a>
     <a href="https://github.com/stylelint" target="_brank"><img src="https://github.com/stylelint.png" alt="Stylelint"></a>
     <a href="https://github.com/intlify" target="_brank"><img src="https://github.com/intlify.png" alt="Intlify"></a>
+    <a href="https://github.com/eslint-stylistic" target="_brank"><img src="https://github.com/eslint-stylistic.png" alt="
+ESLint Stylistic"></a>
     <a href="https://github.com/stylus" target="_brank"><img src="https://github.com/stylus.png" alt="Stylus"></a>
-    <a href="https://github.com/eslint-community" target="_brank"><img src="https://github.com/eslint-community.png" alt="ESLint Community"></a>
   </div>
 </div>
 
@@ -30,14 +34,15 @@ hideInToc: true
   Twitter: [@omoteota](https://twitter.com/omoteota),  
   Qiita: [@ota-meshi](https://qiita.com/ota-meshi)
 - 所属:
-  - [フューチャー株式会社](https://www.future.co.jp/) <span class="platinum">（プラチナスポンサー！）</span> 社員 <span class="since">(2015/06 - )</span>
+  - [フューチャー株式会社](https://www.future.co.jp/) <span class="gold">（ゴールドスポンサー！）</span> 社員 <span class="since">(2015/06 - )</span>
   - [Vue.js](https://vuejs.org/about/team.html) eslint-plugin-vue メンテナー <span class="since">(eslint-plugin-vue 2018/08 - , Vue 2019/07 - )</span>
   - [Stylelint](https://github.com/stylelint) Owners チーム <span class="since">(2020/09 - )</span>
-  - [Intlify](https://github.com/intlify) eslint-plugin-vue-i18n メンテナー <span class="since">(2020/07 - )</span>
   - [Stylus](https://github.com/stylus) チーム <span class="since">(2022/06 - )</span>
   - [ESLint Community](https://github.com/eslint-community) チーム <span class="since">(2022/09 - )</span>
+  - [Svelte](https://github.com/sveltejs) チーム <span class="since">(2023/05 - )</span>
+  - [ESLint](https://github.com/eslint) チーム <span class="since">(2023/08 - )</span>
 - [WEB+DB PRESS Vol.120] 「最新 Vue.js 3 入門」 共同執筆 <span class="since">(2020/12/24)</span>
-- [Google Open Source Peer Bonus 2022] 受賞
+<!-- - [Google Open Source Peer Bonus 2022] 受賞 -->
 
 [web+db press vol.120]: https://gihyo.jp/magazine/wdpress/archive/2021/vol120
 [google open source peer bonus 2022]: https://www.googblogs.com/announcing-first-group-of-google-open-source-peer-bonus-winners-in-2022/
@@ -45,7 +50,7 @@ hideInToc: true
 </div>
 </div>
 
-<style>
+<style scoped>
 .profile {
   grid-template-columns: 0.5fr 1.3fr;
 }
@@ -61,11 +66,13 @@ hideInToc: true
   height: 200px;
 }
 .org-avatars {
-  padding: 32px 16px;
+  --avatar-width: 60px;
+  --avatar-gap: 8px;
+  padding: 16px;
   display: flex;
-  width: calc(60px * 3 + 8px * 2 + 16px);
+  width: calc(var(--avatar-width) * 3 + var(--avatar-gap) * 2 + 16px);
   box-sizing: content-box;
-  gap: 8px;
+  gap: var(--avatar-gap);
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -77,8 +84,8 @@ hideInToc: true
   border-radius: 16px;
   border: 0.5px solid #aaa;
   overflow: hidden;
-  width: 60px;
-  height: 60px;
+  width: var(--avatar-width);
+  height: var(--avatar-width);
   box-sizing: border-box;
   background: #fff;
 }
@@ -99,8 +106,8 @@ hideInToc: true
   color: #fff;
   background-color: #fd1d7c;
 }
-.platinum {
-  color: rgb(250, 249, 228);
+.gold {
+  color: gold;
   font-size: 80%;
   font-weight: 800;
 }

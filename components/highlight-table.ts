@@ -18,7 +18,7 @@ export default defineComponent({
     const highlightRows = computed(() =>
       props.on && props.highlightRows
         ? parseHighlightRows(props.highlightRows)
-        : null
+        : null,
     );
 
     watch(tableEl, renderHighlightRows);

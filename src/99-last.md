@@ -11,6 +11,7 @@ preload: false
 <div
   v-motion-x
   :initial="{ x: -80 }"
+  :visible="{ x: 0 }"
   :enter="{ x: 0 }">
 <div class="gradient" style="    display: inline-block;">
 

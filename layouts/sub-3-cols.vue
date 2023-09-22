@@ -14,3 +14,12 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.sub-3-cols.wide-right .sub-3-cols__middle {
+  display: none;
+}
+.sub-3-cols.wide-right .sub-3-cols__right {
+  grid-area: auto / span 2;
+}
+</style>
