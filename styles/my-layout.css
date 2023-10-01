@@ -11,3 +11,13 @@ strong {
 em {
   @apply text-amber-700 dark:text-amber-200;
 }
+
+.hist-detail {
+  font-size: 90%;
+}
+
+.hist-detail p {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.2rem;
+}
