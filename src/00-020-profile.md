@@ -112,15 +112,3 @@ ESLint Stylistic"></a>
   font-weight: 800;
 }
 </style>
-
-<!-- prettier-ignore-start -->
-
----
-hideInToc: true
----
-
-<!-- prettier-ignore-end -->
-
-# アジェンダ
-
-<Toc maxDepth="2" />

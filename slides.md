@@ -17,6 +17,22 @@ src: ./src/00-020-profile.md
 ---
 
 ---
+src: ./src/88-010-cm.md
+---
+
+---
+src: ./src/88-020.md
+---
+
+---
+src: ./src/88-030.md
+---
+
+---
+src: ./src/00-030-toc.md
+---
+
+---
 src: ./src/01_010.md
 ---
 
@@ -121,15 +137,19 @@ src: ./src/04_110.md
 ---
 
 ---
-src: ./src/88-010-cm.md
+src: ./src/04_120.md
 ---
 
 ---
-src: ./src/88-020.md
+src: ./src/05_010.md
 ---
 
 ---
-src: ./src/88-030.md
+src: ./src/05_020.md
+---
+
+---
+src: ./src/05_030.md
 ---
 
 ---
