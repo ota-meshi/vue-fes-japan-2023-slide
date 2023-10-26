@@ -6,9 +6,6 @@ export function setupLaserPointer(selector: string) {
     );
   const styleEl = document.createElement("style");
   styleEl.innerHTML = `
-:root {
-    --laser-pointer-url: url("${cursorUrl}");
-}
 .laser-pointer-trajectory {
   position: fixed;
   pointer-events: none;
@@ -30,33 +27,36 @@ export function setupLaserPointer(selector: string) {
   }
 }
 ${selector} {
-    cursor: var(--laser-pointer-url), auto;
+    cursor: url("${cursorUrl}"), auto;
 }
 `;
   document.head.appendChild(styleEl);
 
-  const trajectoryImages: HTMLImageElement[] = [];
+  const trajectorySvgList: SVGElement[] = [];
   async function createTrajectory(x, y) {
-    let img: HTMLImageElement;
-    if (trajectoryImages.length >= 20) {
-      img = trajectoryImages.shift()!;
-      img.classList.remove("laser-pointer-trajectory--active");
-      img.classList.add("laser-pointer-trajectory--inactive");
+    let svg: SVGElement;
+    if (trajectorySvgList.length >= 20) {
+      svg = trajectorySvgList.shift()!;
+      svg.classList.remove("laser-pointer-trajectory--active");
+      svg.classList.add("laser-pointer-trajectory--inactive");
     } else {
-      img = document.createElement("img");
-      img.addEventListener("animationend", () => {
-        img.classList.remove("laser-pointer-trajectory--active");
-        img.classList.add("laser-pointer-trajectory--inactive");
+      svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("height", "8");
+      svg.setAttribute("width", "8");
+      svg.setAttribute("viewBox", "0 0 2 2");
+      svg.innerHTML = `<circle cx='1' cy='1' r='1' fill='#da0058'/>`;
+      svg.addEventListener("animationend", () => {
+        svg.classList.remove("laser-pointer-trajectory--active");
+        svg.classList.add("laser-pointer-trajectory--inactive");
       });
     }
-    trajectoryImages.push(img);
-    img.classList.add("laser-pointer-trajectory");
-    img.classList.remove("laser-pointer-trajectory--inactive");
-    img.classList.add("laser-pointer-trajectory--active");
-    img.src = cursorUrl;
-    img.style.top = `${y}px`;
-    img.style.left = `${x}px`;
-    document.body.appendChild(img);
+    trajectorySvgList.push(svg);
+    svg.classList.add("laser-pointer-trajectory");
+    svg.classList.remove("laser-pointer-trajectory--inactive");
+    svg.classList.add("laser-pointer-trajectory--active");
+    svg.style.top = `${y}px`;
+    svg.style.left = `${x}px`;
+    document.body.appendChild(svg);
   }
   window.addEventListener("mousemove", (e) => {
     const x = e.clientX;
