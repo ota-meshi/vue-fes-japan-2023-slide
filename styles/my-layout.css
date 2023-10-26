@@ -22,6 +22,29 @@ em {
   line-height: 1.2rem;
 }
 
-#slideshow {
+#slideshow,
+.mouse-trajectory {
   cursor: url("/cursor.png"), auto;
+}
+
+.mouse-trajectory {
+  position: fixed;
+  animation: 300ms linear mouse-trajectory;
+  pointer-events: none;
+}
+
+.mouse-trajectory--close {
+  animation: none;
+  visibility: hidden;
+}
+
+@keyframes mouse-trajectory {
+  from {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
 }
