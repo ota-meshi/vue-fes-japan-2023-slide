@@ -1,6 +1,6 @@
 import { defineAppSetup } from "@slidev/types";
 import { computed } from "vue";
-import { setupLaserPointer } from "./ laser-pointer";
+import { setupLaserPointer } from "./laser-pointer";
 
 export default defineAppSetup(({ app, router }) => {
   const route = computed(() => router.currentRoute.value);
