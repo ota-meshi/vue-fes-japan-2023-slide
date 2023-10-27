@@ -26,8 +26,9 @@ export function setupLaserPointer(selector: string) {
     opacity: 0.5;
   }
 }
-${selector} {
-    cursor: url("${cursorUrl}"), auto;
+${selector},
+${selector} * {
+    cursor: url("${cursorUrl}"), none !important;
 }
 `;
   document.head.appendChild(styleEl);
@@ -61,7 +62,19 @@ ${selector} {
   window.addEventListener("mousemove", (e) => {
     const x = e.clientX;
     const y = e.clientY;
-    if (document.querySelector(selector)?.contains(e.target as Node)) {
+    const root = document.querySelector(selector);
+    const target = e.target as Element;
+    if (root?.contains(target)) {
+      let t: Element | null = target;
+      while (t && t !== root) {
+        let title = t.getAttribute("title");
+        if (title) {
+          t.setAttribute("data-title", title);
+          t.removeAttribute("title");
+        }
+        t = t.parentElement;
+      }
+
       createTrajectory(x, y);
     }
   });
