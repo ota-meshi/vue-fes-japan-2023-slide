@@ -27,7 +27,7 @@ export function setupLaserPointer(selector: string) {
   }
 }
 ${selector} {
-    cursor: url("${cursorUrl}"), auto;
+    cursor: url("${cursorUrl}"), auto !important;
 }
 `;
   document.head.appendChild(styleEl);
