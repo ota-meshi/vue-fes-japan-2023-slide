@@ -10,7 +10,7 @@
     "format": "prettier . --write"
   },
   "dependencies": {
-    "@slidev/cli": "^0.43.9",
+    "@slidev/cli": "^0.47.0",
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   },

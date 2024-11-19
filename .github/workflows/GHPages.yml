@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
       - name: Install And Build
         run: |+
-          npm install --legacy-peer-deps
+          npm install
           npm i -D playwright-chromium
           npm run build:gh
       - name: Deploy
